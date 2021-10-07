@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'calculator_screen.dart';
 
@@ -46,12 +48,17 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text('C',
                 style: TextStyle(color: Colors.white),
                 ),
                 onPressed: (){deleteAll();},
-              )
+              ),
+              TextButton(
+                child: Text(
+                    '<-',),
+                onPressed: (){deleteOne();},
+              ),
             ],
           ),
           Row(
@@ -98,5 +105,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
   }
 
   deleteAll() {}
+
+  deleteOne() {}
 
 }
