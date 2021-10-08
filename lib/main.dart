@@ -198,7 +198,20 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       onPressed: (){add('÷');},
                       child: Image.asset("icons/divide.png",
                       width: 10.0,
-                      height: 10.0,))
+                      height: 10.0,)
+                  ),
+                  TextButton(
+                    child: Text('x'),
+                    onPressed: () {add('x');},
+                  ),
+                  TextButton(
+                    child: Text('-'),
+                    onPressed: () {add('-');},
+                  ),
+                  TextButton(
+                    child: Text('+'),
+                    onPressed: () {add('+');},
+                  )
                 ],
               )
             ],
