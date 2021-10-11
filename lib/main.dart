@@ -1,3 +1,4 @@
+import 'package:calcolatrice/calculator_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() =>
@@ -45,14 +46,8 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Card(
-              color: Colors.lightGreen[50],
-              child: Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Text(
-                  _str,
-                ),
-              ),
+            CalculatorScreen(
+              displayData: _str,
             )
           ],
         ),
