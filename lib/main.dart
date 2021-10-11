@@ -1,6 +1,8 @@
+import 'package:calcolatrice/group_widgets/expanded_row.dart';
 import 'package:calcolatrice/calculator_screen.dart';
-import 'package:calcolatrice/operation_button.dart';
-import 'typing_button.dart';
+import 'package:calcolatrice/group_widgets/operation_button.dart';
+import 'group_widgets/expanded_button.dart';
+import 'group_widgets/typing_button.dart';
 import 'package:flutter/material.dart';
 
 void main() =>
@@ -50,7 +52,7 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
           children: [
             // region Calculator Screen
             Expanded(
-              flex: 1,
+              flex: 3,
               child: CalculatorScreen(
                 displayData: _str,
               ),
@@ -58,9 +60,7 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
             //endregion
 
             // region First Row
-            Expanded(
-              flex: 1,
-              child: Row(
+            ExpandedRow(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
@@ -87,169 +87,113 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
                     )
                   ),
 
-                  Expanded(
-                    flex:1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '<-',
                       onPressedAction: () { deleteOne(); },
                     )
-                  )
 
                 ]
-              )
-            ),
+              ),
             //endregion
 
             // region Second Row
-            Expanded(
-              flex: 1,
-              child: Row(
+            ExpandedRow(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '7',
                       onPressedAction: () { add('7'); },
-                    )
                   ),
-
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '8',
                       onPressedAction: () { add('8'); },
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '9',
                       onPressedAction: () { add('9'); },
                     ),
-                  ),
                   Expanded(
                     flex: 1,
                     child: OperationButton(
-                      onPressedAction: () { add('/'); },
-                      symbol: "➗",
+                      onPressedAction: () { add('÷'); },
+                      symbol: "÷",
                     ),
                   ),
                 ],
 
               ),
-            ),
             // endregion
 
             //region Third Row
-            Expanded(
-              flex: 1,
-              child: Row(
+            ExpandedRow(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                      flex: 1,
-                      child: TypingButton(
+                  ExpandedButton(
                         action: '4',
                         onPressedAction: () { add('4'); },
-                      )
                   ),
-
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '5',
                       onPressedAction: () { add('5'); },
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '6',
                       onPressedAction: () { add('6'); },
                     ),
-                  ),
                   Expanded(
                     flex: 1,
                     child: OperationButton(
-                      onPressedAction: () { add('✖️'); },
-                      symbol: "✖️",
+                      onPressedAction: () { add('x️'); },
+                      symbol: "x️",
                     ),
                   ),
                 ],
-
               ),
-            ),
             // endregion
 
             // region Fourth Row
-            Expanded(
-              flex: 1,
-              child: Row(
+            ExpandedRow(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                      flex: 1,
-                      child: TypingButton(
+                  ExpandedButton(
                         action: '1',
                         onPressedAction: () { add('1'); },
-                      )
                   ),
-
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '2',
                       onPressedAction: () { add('2'); },
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '3',
                       onPressedAction: () { add('3'); },
                     ),
-                  ),
                   Expanded(
                     flex: 1,
                     child: OperationButton(
-                      onPressedAction: () { add('➖'); },
-                      symbol: "➖",
+                      onPressedAction: () { add('-'); },
+                      symbol: "-",
                     ),
                   ),
                 ],
               ),
-            ),
             //endregion
 
             //region Last Row
-            Expanded(
-              flex: 1,
-              child: Row(
+            ExpandedRow(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                      flex: 1,
-                      child: TypingButton(
+                  ExpandedButton(
                         action: '0',
                         onPressedAction: () { add('0'); },
-                      )
                   ),
-
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '.',
                       onPressedAction: () { add('.'); },
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: TypingButton(
+                  ExpandedButton(
                       action: '=',
-                      onPressedAction: () { add('='); },
+                      onPressedAction: () { getResult(); },
                     ),
-                  ),
                   Expanded(
                     flex: 1,
                     child: OperationButton(
@@ -258,8 +202,7 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
                     ),
                   ),
                 ],
-              ),
-            )
+              )
 
           ],
         ),
@@ -272,4 +215,6 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
   void deleteOne() {}
 
   void add(String action) {}
+
+  void getResult() {}
 }

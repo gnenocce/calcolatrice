@@ -13,7 +13,7 @@ class ExpandedRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       Expanded(
-        flex: 1,
+        flex: 2,
         child: Row(
           children: children,
             crossAxisAlignment: crossAxisAlignment,

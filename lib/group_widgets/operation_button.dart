@@ -24,7 +24,8 @@ class OperationButton extends StatelessWidget {
               onPressed: onPressedAction,
               child: Text(symbol,
                 style: TextStyle(
-                    fontSize: 30.0,
+                    fontSize: 45.0,
+                  color: Colors.black
                 ),
               )
           ),
