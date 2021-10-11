@@ -75,7 +75,12 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
                         child: TextButton(
                           onPressed: () { deleteAll(); },
                           child:  Text(
-                            ('C'),
+                            'C',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30.0,
+                                color: Colors.white
+                            ),
                           )
                         )
                       )
@@ -84,21 +89,9 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
 
                   Expanded(
                     flex:1,
-                    child: Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          color: Colors.black87
-                        ),
-                        // color: Colors.black87,
-                        child: TextButton(
-                          onPressed: () { deleteOne(); },
-                          child:  Text(
-                            ('<-'),
-                          )
-                        )
-                      )
+                    child: TypingButton(
+                      action: '<-',
+                      onPressedAction: () { deleteOne(); },
                     )
                   )
 
@@ -107,6 +100,7 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
             ),
             //endregion
 
+            // region Second Row
             Expanded(
               flex: 1,
               child: Row(
@@ -117,8 +111,9 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
                     child: TypingButton(
                       action: '7',
                       onPressedAction: () { add('7'); },
-                    ),
+                    )
                   ),
+
                   Expanded(
                     flex: 1,
                     child: TypingButton(
@@ -136,12 +131,133 @@ class CalculatorHomePageState extends State<CalculatorHomePage> {
                   Expanded(
                     flex: 1,
                     child: OperationButton(
-                      onPressedAction: () { add('7'); },
-                      image: AssetImage("icons/divide.png"),
+                      onPressedAction: () { add('/'); },
+                      symbol: "➗",
                     ),
                   ),
                 ],
 
+              ),
+            ),
+            // endregion
+
+            //region Third Row
+            Expanded(
+              flex: 1,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                      flex: 1,
+                      child: TypingButton(
+                        action: '4',
+                        onPressedAction: () { add('4'); },
+                      )
+                  ),
+
+                  Expanded(
+                    flex: 1,
+                    child: TypingButton(
+                      action: '5',
+                      onPressedAction: () { add('5'); },
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: TypingButton(
+                      action: '6',
+                      onPressedAction: () { add('6'); },
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: OperationButton(
+                      onPressedAction: () { add('✖️'); },
+                      symbol: "✖️",
+                    ),
+                  ),
+                ],
+
+              ),
+            ),
+            // endregion
+
+            // region Fourth Row
+            Expanded(
+              flex: 1,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                      flex: 1,
+                      child: TypingButton(
+                        action: '1',
+                        onPressedAction: () { add('1'); },
+                      )
+                  ),
+
+                  Expanded(
+                    flex: 1,
+                    child: TypingButton(
+                      action: '2',
+                      onPressedAction: () { add('2'); },
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: TypingButton(
+                      action: '3',
+                      onPressedAction: () { add('3'); },
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: OperationButton(
+                      onPressedAction: () { add('➖'); },
+                      symbol: "➖",
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            //endregion
+
+            //region Last Row
+            Expanded(
+              flex: 1,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                      flex: 1,
+                      child: TypingButton(
+                        action: '0',
+                        onPressedAction: () { add('0'); },
+                      )
+                  ),
+
+                  Expanded(
+                    flex: 1,
+                    child: TypingButton(
+                      action: '.',
+                      onPressedAction: () { add('.'); },
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: TypingButton(
+                      action: '=',
+                      onPressedAction: () { add('='); },
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: OperationButton(
+                      onPressedAction: () { add('+'); },
+                      symbol: "+",
+                    ),
+                  ),
+                ],
               ),
             )
 

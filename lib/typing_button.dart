@@ -15,24 +15,24 @@ class TypingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RawMaterialButton(
-      //  onPressed: onPressedAction,
-      onPressed: onPressedAction,
-      fillColor: backgroundColor,
-        child: Padding(
-          padding: EdgeInsets.all(2.0),
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.0),
-                color: backgroundColor ),
-            child:  Text(
-              action,
-              style: TextStyle(
-                  color: textColor),
-            ),
-          )
+    return Padding(
+        padding: EdgeInsets.all(2.0),
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: backgroundColor
+          ),
+          child: TextButton(
+              onPressed: onPressedAction,
+              child: Text(action,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30.0,
+                    color: textColor
+                ),
+              )
+          ),
         )
-
     );
   }
 }
